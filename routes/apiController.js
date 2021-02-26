@@ -1,12 +1,8 @@
 class apiController {
   static async index(req, res) {
     try {
-      let payload = "Welcome to home page";
-      res.send(payload);
-    } catch (exception) {
-      res.status(500).send(exception);
-    }
-  }
+		 var user = req.query.username;
+res.send("Welcome %s to home page", user);
 }
 
 module.exports = apiController;
