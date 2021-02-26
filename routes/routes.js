@@ -2,10 +2,16 @@ module.exports = function (app) {
   const apiController = require("./apiController");
   //method 1
   app.get("/", apiController.index);
-  //method 2
-  app.get("/hello", function (req, res) {
-    res.send("Hello world!");
-  });
+  app.get("/index", apiController.index);
+
+  app.get("/users", apiController.users);
+  app.get("/user", apiController.userObject);
+
+  //method 2 get welcome
+  app.get("/welcome", apiController.welcomeUser);
+  //method 3
+  //install body parser for using post method
+  app.post("/save", apiController.save);
 
   /// add more routes
 };

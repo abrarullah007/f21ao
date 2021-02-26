@@ -1,30 +1,19 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 const port = 8088;
-
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: false }));
+// create application/json parser
+app.use(bodyParser.json());
+// app.get("/", function (req, res){
+//   res.send("welcome to home page!");
+// })
+// Move all routes to routes.js
 require("./routes/routes.js")(app);
-app.listen(port, () => {
+
+const server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-// const express = require("express");
-// const app = express();
-// const port = 8088;
-// const cors = require("cors");
-// const bodyParser = require("body-parser");
-// const session = require("express-session");
-
-// app.use(cors());
-// app.use(bodyParser.json());
-
-// app.use(bodyParser.urlencoded({ extended: false }));
-// // create application/json parser
-
-// console.log("app running");
-
-// require("./routes/routes.js")(app);
-
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
+module.exports = server;
