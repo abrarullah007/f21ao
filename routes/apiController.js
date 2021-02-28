@@ -7,6 +7,7 @@ class apiController {
       res.status(500).send(exception);
     }
   }
+
   static async users(req, res) {
     try {
       var arr = [
@@ -19,6 +20,7 @@ class apiController {
       res.status(500).send(exception);
     }
   }
+
   static async userObject(req, res) {
     try {
       var obj = { id: 1, firstname: "Joe", lastname: "Bloggs" };
@@ -27,6 +29,7 @@ class apiController {
       res.status(500).send(exception);
     }
   }
+
   static async welcomeUser(req, res) {
     try {
       var user = req.query.username;
