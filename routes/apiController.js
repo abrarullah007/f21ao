@@ -14,6 +14,7 @@ class apiController {
         { "user id": 1, firstname: "Joe", lastname: "Bloggs" },
         { "user id": 2, firstname: "Simon", lastname: "Peters" },
         { "user id": 3, firstname: "Lakshmi", lastname: "Das" },
+        { "user id": 4, firstname: "Peter", lastname: "Allens" },
       ];
       res.send(arr);
     } catch (exception) {
