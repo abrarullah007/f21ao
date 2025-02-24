@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: f21ao
+  labels:
+    app.kubernetes.io/name: f21ao-deploy
+    app.kubernetes.io/component: f21ao-deploy
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: f21ao-deploy
+      app.kubernetes.io/component: f21ao-deploy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: f21ao-deploy
+        app.kubernetes.io/component: f21ao-deploy
+    spec:
+      containers:
+        - name: f21ao
+          image: abrar/f21ao
+          imagePullPolicy: Never # use local image
+          ports:
+            - containerPort: 8088
