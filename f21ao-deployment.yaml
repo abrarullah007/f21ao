@@ -18,8 +18,8 @@ spec:
         app.kubernetes.io/component: f21ao-deploy
     spec:
       containers:
-        - name: f21ao
-          image: abrar/f21ao
+        - name: f21ao-container
+          image: f21ao-test
           imagePullPolicy: Never # use local image
           ports:
             - containerPort: 8088

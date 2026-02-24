@@ -1,7 +1,7 @@
 class apiController {
   static async index(req, res) {
     try {
-      var str = "Hello world!";
+      var str = "Hello world! Welcome to DevOps F21AO";
       res.send(str);
     } catch (exception) {
       res.status(500).send(exception);
